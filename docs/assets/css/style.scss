@@ -1,0 +1,28 @@
+---
+
+---
+
+/*!
+ * Copyright 2020 Fajar Setya Budi.
+ * 
+ * Used 3rd-party Plugin :
+ * Bootstrap (Grid Only)
+ * Monokai (Syntax Highlighter)
+ * Social Logos (Social Icon)
+ *
+ */
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/grid";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/input-group";
+@import "bootstrap/button-group";
+@import "bootstrap/custom-forms";
+@import "monokai";
+@import "social-logos";
+@import "main";

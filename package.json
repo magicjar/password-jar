@@ -1,0 +1,43 @@
+{
+  "name": "password-jar",
+  "description": "Generator Password Indonesia",
+  "version": "0.1.0",
+  "keywords": [
+    "password",
+    "generator",
+    "indonesia",
+    "pin"
+  ],
+  "main": "dist/password-jar.js",
+  "scripts": {
+    "build": "tsdx build --format cjs,esm,umd,system --target browser",
+    "build:types": "tsc",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --presets=@babel/env",
+    "docs-build": "bundle exec jekyll build",
+    "docs-serve": "bundle exec jekyll serve",
+    "dist-compile-bundle": "rollup --environment BUNDLE:true --config rollup.config.js --sourcemap",
+    "dist-compile-standalone": "rollup --environment BUNDLE:false --config rollup.config.js --sourcemap"
+  },
+  "author": "magicjar",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@rollup/plugin-babel": "^5.0.3",
+    "bootstrap": "^4.5.0",
+    "rollup": "^2.9.1",
+    "tsdx": "^0.13.2",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "files": [
+    "src/*.{ts}",
+    "dist/*.{js,map}"
+  ]
+}

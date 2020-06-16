@@ -1,0 +1,107 @@
+---
+layout: default
+---
+<div id="generator" class="no-gutters">
+    <div class="col-12 col-lg-6">
+        <header>
+            <img src="" alt="">
+        </header>
+        <div id="tabs-header" class="btn-group btn-group-lg btn-block" role="group">
+            <div class="tablink col-4 btn btn-secondary btn-success" onclick="openTab(event, 'strongsave')">Strong & Save</div>
+            <div class="tablink col-4 btn btn-secondary" onclick="openTab(event, 'easytoremember')">Easy to Remember</div>
+            <div class="tablink col-4 btn btn-secondary" onclick="openTab(event, 'pin')">PIN</div>
+        </div>
+        <div id="tabs-content" class="row">
+            <div id="strongsave" class="col-12 tabs animate-opacity">
+                <h2 class="text-center margin-bottom-2">Strong and Save Password</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                <div class="row">
+                    <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
+                        <label for="length" class="slider-icon">10</label>
+                        <input type="range" class="custom-range" name="length" id="length" value="10" min="4" max="16" oninput="getRangeValue(this.value, 'slider-label1')" onchange="generate()">
+                        <label for="length" id="slider-label1" class="slider-label">10</label>
+                    </div>
+                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
+                        <div class="custom-control custom-switch text-center">
+                            <input type="checkbox" class="custom-control-input" name="lowercase" id="lowercase" checked>
+                            <label for="lowercase" class="custom-control-label"></label>
+                        </div>
+                    </div>
+                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
+                        <div class="custom-control custom-switch text-center">
+                            <input type="checkbox" class="custom-control-input" name="uppercase" id="uppercase" checked>
+                            <label for="uppercase" class="custom-control-label"></label>
+                        </div>
+                    </div>
+                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
+                        <div class="custom-control custom-switch text-center">
+                            <input type="checkbox" class="custom-control-input" name="numbers" id="numbers" checked>
+                            <label for="numbers" class="custom-control-label"></label>
+                        </div>
+                    </div>
+                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
+                        <div class="custom-control custom-switch text-center">
+                            <input type="checkbox" class="custom-control-input" name="symbols" id="symbols" checked>
+                            <label for="symbols" class="custom-control-label"></label>
+                        </div>
+                    </div>
+                    <div class="col-12 input-group margin-top-2 input-group-lg">
+                        <input class="form-control text-center" type="text" name="result01" id="result01" value="faAs@!13Ww" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="easytoremember" class="col-12 tabs animate-opacity display-none">
+                <h2 class="text-center margin-bottom-2">Easy to Remember Password</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                <div class="row">
+                    <div class="col-5 form-group margin-bottom-1 margin-top-1 display-flex">
+                        <label for="length" class="slider-icon">10</label>
+                        <input type="range" class="custom-range" name="letterLength" id="letterLength" value="6" min="3" max="10" oninput="getRangeValue(this.value, 'slider-label2')" onchange="generate()">
+                        <label for="length" id="slider-label2" class="slider-label">10</label>
+                    </div>
+                    <div class="col-5 form-group margin-bottom-1 margin-top-1 display-flex">
+                        <label for="length" class="slider-icon">10</label>
+                        <input type="range" class="custom-range" name="digitLength" id="digitLength" value="2" min="1" max="6" oninput="getRangeValue(this.value, 'slider-label3')" onchange="generate()">
+                        <label for="length" id="slider-label3" class="slider-label">10</label>
+                    </div>
+                    <div class="col-2 form-group margin-bottom-1 margin-top-1">
+                        <div class="custom-control custom-switch text-center">
+                            <input type="checkbox" class="custom-control-input" name="letterFirst" id="letterFirst" checked>
+                            <label for="letterFirst" class="custom-control-label">L</label>
+                        </div>
+                    </div>
+                    <div class="col-12 input-group margin-top-2">
+                        <input class="form-control text-center" type="text" name="result02" id="result02" value="jafm12" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pin" class="col-12 tabs animate-opacity display-none">
+                <h2 class="text-center margin-bottom-2">PIN Password</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                <div class="row">
+                    <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
+                        <label for="length" class="slider-icon">10</label>
+                        <input type="range" class="custom-range" name="pinLength" id="pinLength" value="6" min="4" max="16" oninput="getRangeValue(this.value, 'slider-label4')" onchange="generate()">
+                        <label for="length" id="slider-label4" class="slider-label">10</label>
+                    </div>
+                    <div class="col-12 input-group margin-top-2">
+                        <input class="form-control text-center" type="text" name="result03" id="result03" value="512312" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabs-footer" class="btn-group btn-group-lg btn-block" role="group">
+            <button class="btn btn-success" type="submit">Generate</button>
+            <button class="btn btn-secondary" type="reset">Reset</button>
+        </div>
+    </div>
+</div>
