@@ -3,7 +3,7 @@ const uppercaseCharSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbersCharSet = '0123456789';
 const symbolsCharSet = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~';
 
-export function Generate(length: number, lowercase?: boolean, uppercase?: boolean, numbers?: boolean, symbols?: boolean): string {    
+function Generate(length, lowercase = true, uppercase = true, numbers = true, symbols = true) {
     let selectionCharSet = '';
 
     if (lowercase) selectionCharSet += lowercaseCharSet;
@@ -23,3 +23,5 @@ export function Generate(length: number, lowercase?: boolean, uppercase?: boolea
 
     return randomCharSet;
 }
+
+export default Generate

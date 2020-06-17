@@ -8,33 +8,32 @@
     "indonesia",
     "pin"
   ],
-  "main": "dist/password-jar.js",
-  "scripts": {
-    "build": "tsdx build --format cjs,esm,umd,system --target browser",
-    "build:types": "tsc",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --presets=@babel/env",
-    "docs-build": "bundle exec jekyll build",
-    "docs-serve": "bundle exec jekyll serve",
-    "dist-compile-bundle": "rollup --environment BUNDLE:true --config rollup.config.js --sourcemap",
-    "dist-compile-standalone": "rollup --environment BUNDLE:false --config rollup.config.js --sourcemap"
-  },
   "author": "magicjar",
   "license": "MIT",
+  "main": "dist",
+  "scripts": {
+    "docs-build": "bundle exec jekyll build",
+    "docs-serve": "bundle exec jekyll serve",
+    "js-build": "npm-run-all --parallel js-compile js-minify --sequential js-copy",
+    "js-compile": "rollup --config rollup.config.js --sourcemap",
+    "js-copy": "shx cp -r dist/*.{js,map} docs/assets/js",
+    "js-minify": "uglifyjs --compress typeofs=false,drop_console=true --mangle --comments \"/^!/\" --source-map \"content=dist/password-jar.js.map,includeSources,url=password-jar.min.js.map\" --output dist/password-jar.min.js dist/password-jar.js",
+    "js-minify-docs": "uglifyjs --compress typeofs=false,drop_console=true --mangle --comments \"/^!/\" --output docs/assets/js/script.min.js docs/assets/js/script.js",
+    "watch": "npm-run-all --parallel watch-*",
+    "watch-js-docs": "nodemon --watch docs/assets/js/script.js --exec \"npm run js-minify-docs\"",
+    "watch-js-main": "nodemon --watch src/ --ext js --exec \"npm run js-build\""
+  },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
-    "@babel/preset-typescript": "^7.10.1",
     "@rollup/plugin-babel": "^5.0.3",
     "bootstrap": "^4.5.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
     "rollup": "^2.9.1",
-    "tsdx": "^0.13.2",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "shx": "^0.3.2",
+    "uglify-js": "^3.4.3"
   },
   "files": [
     "src/*.{ts}",

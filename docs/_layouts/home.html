@@ -1,107 +1,187 @@
 ---
 layout: default
 ---
-<div id="generator" class="no-gutters">
-    <div class="col-12 col-lg-6">
-        <header>
-            <img src="" alt="">
-        </header>
-        <div id="tabs-header" class="btn-group btn-group-lg btn-block" role="group">
-            <div class="tablink col-4 btn btn-secondary btn-success" onclick="openTab(event, 'strongsave')">Strong & Save</div>
-            <div class="tablink col-4 btn btn-secondary" onclick="openTab(event, 'easytoremember')">Easy to Remember</div>
-            <div class="tablink col-4 btn btn-secondary" onclick="openTab(event, 'pin')">PIN</div>
-        </div>
-        <div id="tabs-content" class="row">
-            <div id="strongsave" class="col-12 tabs animate-opacity">
-                <h2 class="text-center margin-bottom-2">Strong and Save Password</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
-                <div class="row">
-                    <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
-                        <label for="length" class="slider-icon">10</label>
-                        <input type="range" class="custom-range" name="length" id="length" value="10" min="4" max="16" oninput="getRangeValue(this.value, 'slider-label1')" onchange="generate()">
-                        <label for="length" id="slider-label1" class="slider-label">10</label>
-                    </div>
-                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
-                        <div class="custom-control custom-switch text-center">
-                            <input type="checkbox" class="custom-control-input" name="lowercase" id="lowercase" checked>
-                            <label for="lowercase" class="custom-control-label"></label>
+<div id="generator">
+    <div class="container">
+        <div class="col-12 col-md-10 col-xl-9">
+            <header class="margin-bottom-2 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                    <title>icon_transparent</title>
+                    <path
+                        d="M104,0H24A24.07,24.07,0,0,0,0,24v80a24.07,24.07,0,0,0,24,24h80a24.07,24.07,0,0,0,24-24V24A24.07,24.07,0,0,0,104,0Zm-3,83.9a37,37,0,0,1-74,0v-36A37,37,0,0,1,43.6,17.06a5,5,0,0,1,.4-10H84a5,5,0,0,1,.4,10A37,37,0,0,1,101,47.9Z"
+                        style="fill:rgba(255, 255, 255, .66)" />
+                    <path
+                        d="M64,20.9a27,27,0,0,0-27,27v36a27,27,0,0,0,54,0v-36A27,27,0,0,0,64,20.9ZM75,73a1.25,1.25,0,0,1,1.25-2.17l2.46,1.42V69.38a1.25,1.25,0,0,1,2.5,0v2.84l2.46-1.42A1.25,1.25,0,0,1,85,73L82.5,74.38,85,75.8a1.25,1.25,0,0,1,.45,1.71,1.26,1.26,0,0,1-1.7.46l-2.46-1.42v2.83a1.25,1.25,0,0,1-2.5,0V76.55L76.29,78A1.25,1.25,0,0,1,75,75.8l2.46-1.42ZM59,73a1.25,1.25,0,0,1,1.25-2.17l2.46,1.42V69.38a1.25,1.25,0,0,1,2.5,0v2.84l2.46-1.42A1.25,1.25,0,0,1,69,73L66.5,74.38,69,75.8a1.25,1.25,0,0,1,.45,1.71,1.26,1.26,0,0,1-1.7.46l-2.46-1.42v2.83a1.25,1.25,0,0,1-2.5,0V76.55L60.29,78A1.25,1.25,0,0,1,59,75.8l2.46-1.42ZM43,73a1.25,1.25,0,0,1,1.25-2.17l2.46,1.42V69.38a1.25,1.25,0,0,1,2.5,0v2.84l2.46-1.42A1.25,1.25,0,0,1,53,73L50.5,74.38,53,75.8a1.25,1.25,0,0,1,.45,1.71,1.26,1.26,0,0,1-1.7.46l-2.46-1.42v2.83a1.25,1.25,0,0,1-2.5,0V76.55L44.29,78A1.25,1.25,0,0,1,43,75.8l2.46-1.42ZM53,92.38H43a2,2,0,0,1,0-4H53a2,2,0,0,1,0,4Zm16,0H59a2,2,0,0,1,0-4H69a2,2,0,0,1,0,4Zm16,0H75a2,2,0,0,1,0-4H85a2,2,0,0,1,0,4Z"
+                        style="fill: rgba(255, 255, 255, .66)" />
+                </svg>
+            </header>
+            <div id="tabs-header" class="btn-group btn-group-lg btn-block" role="group">
+                <div class="tablink col-4 btn btn-secondary btn-sunset-orange btn-success" onclick="openTab(event, 'strongsave')">Strong & Save</div>
+                <div class="tablink col-4 btn btn-secondary btn-pastel-orange" onclick="openTab(event, 'easytoremember')">Easy to Remember</div>
+                <div class="tablink col-4 btn btn-secondary btn-malachite" onclick="openTab(event, 'pin')">PIN</div>
+            </div>
+            <div id="tabs-content">
+                <div id="strongsave" class="col-12 tabs">
+                    <div class="animate-opacity">
+                        <h2 class="text-center margin-bottom-2">Strong and Save Password</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni
+                            perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                        <div class="row">
+                            <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
+                                <label for="length" class="slider-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                        <title>Password Length</title>
+                                        <path
+                                            d="M0,0V128H128V0ZM24.18,46.43a2.67,2.67,0,0,1,3.5-1h-.13l10.13,5.62V41.68a2.56,2.56,0,0,1,2.62-2.63,2.62,2.62,0,0,1,2.5,2.63v9.37c2.76-1.37,7.38-4.12,10.13-5.62h-.12a2.62,2.62,0,0,1,3.49,1,2.52,2.52,0,0,1-1,3.5l-10,5.62,10,5.5a2.36,2.36,0,0,1,1,3.38,2.63,2.63,0,0,1-3.49,1h.12L42.8,59.8v9.38a2.61,2.61,0,0,1-2.5,2.62,2.56,2.56,0,0,1-2.62-2.62V59.8L27.55,65.43h.13a2.56,2.56,0,0,1-2.63-4.38l10.13-5.5L25.05,49.93A2.72,2.72,0,0,1,24.18,46.43ZM57.36,95.17h-34a2.87,2.87,0,0,1-2.9-2.81,2.92,2.92,0,0,1,2.9-2.81h34a2.92,2.92,0,0,1,2.89,2.81A2.87,2.87,0,0,1,57.36,95.17Zm47.11,0h-34a2.87,2.87,0,0,1-2.89-2.81,2.92,2.92,0,0,1,2.89-2.81h34a2.92,2.92,0,0,1,2.89,2.81A2.87,2.87,0,0,1,104.47,95.17Z"
+                                            style="fill:#007bff" />
+                                    </svg>
+                                </label>
+                                <input type="range" class="custom-range" name="length" id="length" value="10" min="4" max="64" oninput="setRangeValue(this.value, 'slider-label1')">
+                                <label for="length" id="slider-label1" class="slider-label">10</label>
+                            </div>
+                            <div class="col-6 col-sm-3 form-group margin-bottom-1 margin-top-1">
+                                <div class="custom-control custom-switch text-center">
+                                    <input type="checkbox" class="custom-control-input" name="uppercase" id="uppercase" checked
+                                        onclick="generatePassword()">
+                                    <label for="uppercase" class="custom-control-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                            <title>Include Uppercase</title>
+                                            <path
+                                                d="M0,0V128H128V0ZM83.92,49.23a3.19,3.19,0,0,1-3.12,3.13,3.25,3.25,0,0,1-3.13-3.13V42.82H67.44V85h3.2a3.21,3.21,0,0,1,3.21,3.13,3.27,3.27,0,0,1-3.21,3.13H58a3.19,3.19,0,0,1-3.13-3.13A3.14,3.14,0,0,1,58,85h3.2V42.82H51v6.41a3.17,3.17,0,0,1-6.33,0V39.7a3.19,3.19,0,0,1,3.13-3.13h33a3.19,3.19,0,0,1,3.12,3.13Z"
+                                                style="fill:#007bff" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3 form-group margin-bottom-1 margin-top-1">
+                                <div class="custom-control custom-switch text-center">
+                                    <input type="checkbox" class="custom-control-input" name="lowercase" id="lowercase" checked
+                                        onclick="generatePassword()">
+                                    <label for="lowercase" class="custom-control-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                            <title>Include Lowercase</title>
+                                            <path
+                                                d="M0,0V128H128V0ZM74.86,90.25a10,10,0,0,1-6,1.64c-5.94-.16-9.54-6.41-9.54-11.56V61.58h-5a2.89,2.89,0,0,1-2.89-2.9,3,3,0,0,1,2.89-3h5v-8a2.93,2.93,0,0,1,5.86,0v8h5.08a2.89,2.89,0,0,1,2.89,3,2.84,2.84,0,0,1-2.89,2.9H65.17V80.09c-.07,2.42,1,5.86,3.83,6a6.81,6.81,0,0,0,3-.78,2.85,2.85,0,1,1,2.89,4.92Z"
+                                                style="fill:#007bff" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3 form-group margin-bottom-1 margin-top-1">
+                                <div class="custom-control custom-switch text-center">
+                                    <input type="checkbox" class="custom-control-input" name="numbers" id="numbers" checked
+                                        onclick="generatePassword()">
+                                    <label for="numbers" class="custom-control-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                            <title>Include Numbers</title>
+                                            <path
+                                                d="M0,0V128H128V0ZM73.14,91.27H59.08a3.51,3.51,0,0,1-3.52-3.52,3.57,3.57,0,0,1,3.52-3.59h3.51V44.47l-5,2.73a3.51,3.51,0,0,1-3.51-6.09l10.23-6c1.72-.7,4-.31,4.93,1.33a4.42,4.42,0,0,1,.46,1.79V84.16h3.44a3.63,3.63,0,0,1,3.6,3.59A3.57,3.57,0,0,1,73.14,91.27Z"
+                                                style="fill:#007bff" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3 form-group margin-bottom-1 margin-top-1">
+                                <div class="custom-control custom-switch text-center">
+                                    <input type="checkbox" class="custom-control-input" name="symbols" id="symbols"
+                                        onclick="generatePassword()">
+                                    <label for="symbols" class="custom-control-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                            <title>Include Symbols</title>
+                                            <path d="M66.85,66.26V83.92c4.46-1.56,8.05-4.3,8.05-9.3C74.9,70.17,70.06,67.59,66.85,66.26Z" style="fill:#007bff" />
+                                            <path d="M54.43,52.43c0,3.21,3,5,6.72,6.33V44.15C57.48,44.15,54.43,48.61,54.43,52.43Z" style="fill:#007bff" />
+                                            <path
+                                                d="M0,0V128H128V0ZM66.85,89.55v2.57A2.93,2.93,0,0,1,64,95a2.87,2.87,0,0,1-2.81-2.9V89.47c-7.5-1.1-13.91-6.64-13.91-15.32a2.94,2.94,0,0,1,2.89-2.89A2.88,2.88,0,0,1,53,74.15c0,4.77,3.6,9.3,8.13,9.3V64.86c-6.41-1.72-12.5-4.3-12.5-12.43S54.35,39.07,61.15,38V35.87A2.75,2.75,0,0,1,64,33.06a2.81,2.81,0,0,1,2.89,2.81V38c7.11,2,13.21,6.56,13.21,15.24a2.93,2.93,0,0,1-5.86,0c0-4.54-3.28-7.82-7.27-9.38L66.85,60.4c2,.47,13.91,4.14,13.91,14.22C80.76,83.06,74.2,88.61,66.85,89.55Z"
+                                                style="fill:#007bff" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 margin-top-2">
+                                <div class="mj-result"></div>
+                                <div class="mj-result-copied">Password Copied</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
-                        <div class="custom-control custom-switch text-center">
-                            <input type="checkbox" class="custom-control-input" name="uppercase" id="uppercase" checked>
-                            <label for="uppercase" class="custom-control-label"></label>
+                </div>
+                <div id="easytoremember" class="col-12 tabs display-none">
+                    <div class="animate-opacity">
+                        <h2 class="text-center margin-bottom-2">Easy to Remember Password</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                        <div class="row">
+                            <div class="col-12 col-md-12 form-group margin-bottom-1 margin-top-1 display-flex">
+                                <label for="length" class="slider-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                        <title>Letter Length</title>
+                                        <path
+                                            d="M0,0V128H128V0ZM60.41,52.36a3.25,3.25,0,0,1-3.13-3.13V42.82H47.05V85h3.2a3.2,3.2,0,0,1,3.2,3.13,3.26,3.26,0,0,1-3.2,3.13H37.59a3.19,3.19,0,0,1-3.12-3.13A3.14,3.14,0,0,1,37.59,85H40.8V42.82H30.64v6.41a3.17,3.17,0,0,1-6.33,0V39.7a3.19,3.19,0,0,1,3.13-3.13h33a3.19,3.19,0,0,1,3.12,3.13v9.53A3.19,3.19,0,0,1,60.41,52.36ZM99.7,95.17h-34a2.87,2.87,0,0,1-2.89-2.81,2.92,2.92,0,0,1,2.89-2.81h34a2.92,2.92,0,0,1,2.9,2.81A2.87,2.87,0,0,1,99.7,95.17Z"
+                                            style="fill:#007bff" />
+                                    </svg>
+                                </label>
+                                <input type="range" class="custom-range" name="letterLength" id="letterLength" value="6" min="3" max="10" oninput="setRangeValue(this.value, 'slider-label2')">
+                                <label for="length" id="slider-label2" class="slider-label">6</label>
+                            </div>
+                            <div class="col-12 col-md-8 col-lg-9 form-group margin-bottom-1 margin-top-1 display-flex">
+                                <label for="length" class="slider-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                        <title>Digit Length</title>
+                                        <path
+                                            d="M0,0V128H128V0ZM52.74,85.3h-11A2.73,2.73,0,0,1,39,82.55a2.78,2.78,0,0,1,2.74-2.8H44.5v-31l-3.91,2.14a2.75,2.75,0,0,1-2.74-4.77l8-4.7a3.11,3.11,0,0,1,3.85,1,3.49,3.49,0,0,1,.36,1.41V79.75h2.69a2.84,2.84,0,0,1,2.81,2.8A2.79,2.79,0,0,1,52.74,85.3Zm35.65,3H61.83a2.23,2.23,0,0,1-2.25-2.19A2.28,2.28,0,0,1,61.83,84H88.39a2.28,2.28,0,0,1,2.25,2.2A2.23,2.23,0,0,1,88.39,88.35Z"
+                                            style="fill:#007bff" />
+                                    </svg>
+                                </label>
+                                <input type="range" class="custom-range" name="digitLength" id="digitLength" value="2" min="1" max="6" oninput="setRangeValue(this.value, 'slider-label3')">
+                                <label for="length" id="slider-label3" class="slider-label">2</label>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 form-group margin-bottom-1 margin-top-1">
+                                <div class="custom-control custom-switch text-center">
+                                    <input type="checkbox" class="custom-control-input" name="letterFirst" id="letterFirst" checked onclick="generatePassword()">
+                                    <label for="letterFirst" class="custom-control-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                            <title>Letter First</title>
+                                            <path
+                                                d="M0,0V128H128V0ZM67.51,88.12a3.18,3.18,0,0,1-3.12,3.12H36a3.18,3.18,0,0,1-3.12-3.12A3.13,3.13,0,0,1,36,85h3.2V42.88H36a3.12,3.12,0,0,1-3.12-3.12A3.18,3.18,0,0,1,36,36.64H48.64a3.25,3.25,0,0,1,3.19,3.12,3.19,3.19,0,0,1-3.19,3.12h-3.2V85H61.19V78.6a3.26,3.26,0,0,1,3.2-3.12,3.18,3.18,0,0,1,3.12,3.12ZM94,91.24H80a3.5,3.5,0,0,1-3.51-3.51A3.56,3.56,0,0,1,80,84.14H83.5V44.52l-5,2.73A3.51,3.51,0,0,1,75,41.16l10.22-6c1.71-.7,4-.31,4.91,1.32a4.28,4.28,0,0,1,.47,1.8V84.14H94a3.63,3.63,0,0,1,3.59,3.59A3.56,3.56,0,0,1,94,91.24Z"
+                                                style="fill:#007bff" />
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 margin-top-2">
+                                <div class="mj-result"></div>
+                                <div class="mj-result-copied">Password Copied</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
-                        <div class="custom-control custom-switch text-center">
-                            <input type="checkbox" class="custom-control-input" name="numbers" id="numbers" checked>
-                            <label for="numbers" class="custom-control-label"></label>
-                        </div>
-                    </div>
-                    <div class="col-3 form-group margin-bottom-1 margin-top-1">
-                        <div class="custom-control custom-switch text-center">
-                            <input type="checkbox" class="custom-control-input" name="symbols" id="symbols" checked>
-                            <label for="symbols" class="custom-control-label"></label>
-                        </div>
-                    </div>
-                    <div class="col-12 input-group margin-top-2 input-group-lg">
-                        <input class="form-control text-center" type="text" name="result01" id="result01" value="faAs@!13Ww" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
+                </div>
+                <div id="pin" class="col-12 tabs display-none">
+                    <div class="animate-opacity">
+                        <h2 class="text-center margin-bottom-2">PIN Password</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
+                        <div class="row">
+                            <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
+                                <label for="length" class="slider-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                                        <title>Password Length</title>
+                                        <path
+                                            d="M0,0V128H128V0ZM24.18,46.43a2.67,2.67,0,0,1,3.5-1h-.13l10.13,5.62V41.68a2.56,2.56,0,0,1,2.62-2.63,2.62,2.62,0,0,1,2.5,2.63v9.37c2.76-1.37,7.38-4.12,10.13-5.62h-.12a2.62,2.62,0,0,1,3.49,1,2.52,2.52,0,0,1-1,3.5l-10,5.62,10,5.5a2.36,2.36,0,0,1,1,3.38,2.63,2.63,0,0,1-3.49,1h.12L42.8,59.8v9.38a2.61,2.61,0,0,1-2.5,2.62,2.56,2.56,0,0,1-2.62-2.62V59.8L27.55,65.43h.13a2.56,2.56,0,0,1-2.63-4.38l10.13-5.5L25.05,49.93A2.72,2.72,0,0,1,24.18,46.43ZM57.36,95.17h-34a2.87,2.87,0,0,1-2.9-2.81,2.92,2.92,0,0,1,2.9-2.81h34a2.92,2.92,0,0,1,2.89,2.81A2.87,2.87,0,0,1,57.36,95.17Zm47.11,0h-34a2.87,2.87,0,0,1-2.89-2.81,2.92,2.92,0,0,1,2.89-2.81h34a2.92,2.92,0,0,1,2.89,2.81A2.87,2.87,0,0,1,104.47,95.17Z"
+                                            style="fill:#007bff" />
+                                    </svg>
+                                </label>
+                                <input type="range" class="custom-range" name="pinLength" id="pinLength" value="6" min="4" max="16" oninput="setRangeValue(this.value, 'slider-label4')">
+                                <label for="length" id="slider-label4" class="slider-label">6</label>
+                            </div>
+                            <div class="col-12 margin-top-2">
+                                <div class="mj-result"></div>
+                                <div class="mj-result-copied">Password Copied</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="easytoremember" class="col-12 tabs animate-opacity display-none">
-                <h2 class="text-center margin-bottom-2">Easy to Remember Password</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
-                <div class="row">
-                    <div class="col-5 form-group margin-bottom-1 margin-top-1 display-flex">
-                        <label for="length" class="slider-icon">10</label>
-                        <input type="range" class="custom-range" name="letterLength" id="letterLength" value="6" min="3" max="10" oninput="getRangeValue(this.value, 'slider-label2')" onchange="generate()">
-                        <label for="length" id="slider-label2" class="slider-label">10</label>
-                    </div>
-                    <div class="col-5 form-group margin-bottom-1 margin-top-1 display-flex">
-                        <label for="length" class="slider-icon">10</label>
-                        <input type="range" class="custom-range" name="digitLength" id="digitLength" value="2" min="1" max="6" oninput="getRangeValue(this.value, 'slider-label3')" onchange="generate()">
-                        <label for="length" id="slider-label3" class="slider-label">10</label>
-                    </div>
-                    <div class="col-2 form-group margin-bottom-1 margin-top-1">
-                        <div class="custom-control custom-switch text-center">
-                            <input type="checkbox" class="custom-control-input" name="letterFirst" id="letterFirst" checked>
-                            <label for="letterFirst" class="custom-control-label">L</label>
-                        </div>
-                    </div>
-                    <div class="col-12 input-group margin-top-2">
-                        <input class="form-control text-center" type="text" name="result02" id="result02" value="jafm12" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="tabs-footer" class="btn-group btn-group-lg btn-block" role="group">
+                <div class="btn btn-yosemite-aqua" onclick="generatePassword()">Generate</div>
+                <div class="btn btn-yosemite-dark" onclick="copyPassword()">Copy</div>
             </div>
-            <div id="pin" class="col-12 tabs animate-opacity display-none">
-                <h2 class="text-center margin-bottom-2">PIN Password</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, numquam harum officia maxime suscipit dolores magni perspiciatis totam doloremque natus consequatur modi minima sit, neque debitis doloribus dolore hic laudantium?</p>
-                <div class="row">
-                    <div class="col-12 form-group margin-bottom-1 margin-top-1 display-flex">
-                        <label for="length" class="slider-icon">10</label>
-                        <input type="range" class="custom-range" name="pinLength" id="pinLength" value="6" min="4" max="16" oninput="getRangeValue(this.value, 'slider-label4')" onchange="generate()">
-                        <label for="length" id="slider-label4" class="slider-label">10</label>
-                    </div>
-                    <div class="col-12 input-group margin-top-2">
-                        <input class="form-control text-center" type="text" name="result03" id="result03" value="512312" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" id="button-copy" name="button-copy">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="tabs-footer" class="btn-group btn-group-lg btn-block" role="group">
-            <button class="btn btn-success" type="submit">Generate</button>
-            <button class="btn btn-secondary" type="reset">Reset</button>
         </div>
     </div>
 </div>
