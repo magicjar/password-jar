@@ -22,7 +22,7 @@ google_analytics_id:
 
 # Server setings
 source: docs
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/password-jar" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
