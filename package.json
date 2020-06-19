@@ -19,6 +19,7 @@
     "js-copy": "shx cp -r dist/*.{js,map} docs/assets/js",
     "js-minify": "uglifyjs --compress typeofs=false,drop_console=true --mangle --comments \"/^!/\" --source-map \"content=dist/password-jar.js.map,includeSources,url=password-jar.min.js.map\" --output dist/password-jar.min.js dist/password-jar.js",
     "js-minify-docs": "uglifyjs --compress typeofs=false,drop_console=true --mangle --comments \"/^!/\" --output docs/assets/js/script.min.js docs/assets/js/script.js",
+    "test": "jest",
     "watch": "npm-run-all --parallel watch-*",
     "watch-js-docs": "nodemon --watch docs/assets/js/script.js --exec \"npm run js-minify-docs\"",
     "watch-js-main": "nodemon --watch src/ --ext js --exec \"npm run js-build\""
@@ -29,6 +30,7 @@
     "@babel/preset-env": "^7.10.2",
     "@rollup/plugin-babel": "^5.0.3",
     "bootstrap": "^4.5.0",
+    "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.9.1",
@@ -38,5 +40,8 @@
   "files": [
     "src/*.{ts}",
     "dist/*.{js,map}"
-  ]
+  ],
+  "jest": {
+    "roots": ["src"]
+  }
 }
