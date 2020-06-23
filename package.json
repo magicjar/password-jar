@@ -14,7 +14,7 @@
   "scripts": {
     "docs-build": "bundle exec jekyll build",
     "docs-serve": "bundle exec jekyll serve",
-    "js-build": "npm-run-all --sequential js-compile js-minify js-copy",
+    "js-build": "npm-run-all --sequential js-compile js-minify* js-copy",
     "js-compile": "rollup --config rollup.config.js --sourcemap",
     "js-copy": "shx cp -r dist/*.min*{js,map} docs/assets/js",
     "js-minify": "uglifyjs --compress typeofs=false,drop_console=true --mangle --comments \"/^!/\" --source-map \"content=dist/password-jar.js.map,includeSources,url=password-jar.min.js.map\" --output dist/password-jar.min.js dist/password-jar.js",
