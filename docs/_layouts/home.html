@@ -36,8 +36,10 @@ layout: default
                                             style="fill:#007bff" />
                                     </svg>
                                 </label>
-                                <input type="range" class="custom-range" name="length" id="length" value="12" min="6" max="32" oninput="setRangeValue(this.value, 'slider-label1')">
-                                <label for="length" id="slider-label1" class="slider-label">12</label>
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(-1, '#length')">-</button>
+                                <input type="range" class="custom-range" name="length" id="length" value="12" min="6" max="32" oninput="setRangeValue(this.value, '#length')">
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(1, '#length')">+</button>
+                                <label for="#length" id="slider-label1" class="slider-label">12</label>
                             </div>
                             <div class="col-6 col-sm-3 form-group margin-bottom-1 margin-top-1">
                                 <div class="custom-control custom-switch text-center">
@@ -120,8 +122,10 @@ layout: default
                                             style="fill:#007bff" />
                                     </svg>
                                 </label>
-                                <input type="range" class="custom-range" name="letterLength" id="letterLength" value="6" min="4" max="14" oninput="setRangeValue(this.value, 'slider-label2')">
-                                <label for="length" id="slider-label2" class="slider-label">6</label>
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(-1, '#letterLength')">-</button>
+                                <input type="range" class="custom-range" name="letterLength" id="letterLength" value="6" min="4" max="14" oninput="setRangeValue(this.value, '#letterLength')">
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(1, '#letterLength')">+</button>
+                                <label for="#letterLength" id="slider-label2" class="slider-label">6</label>
                             </div>
                             <div class="col-12 col-md-8 col-lg-9 form-group margin-bottom-1 margin-top-1 display-flex">
                                 <label for="length" class="slider-icon">
@@ -132,8 +136,10 @@ layout: default
                                             style="fill:#007bff" />
                                     </svg>
                                 </label>
-                                <input type="range" class="custom-range" name="digitLength" id="digitLength" value="4" min="2" max="6" oninput="setRangeValue(this.value, 'slider-label3')">
-                                <label for="length" id="slider-label3" class="slider-label">4</label>
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(-1, '#digitLength')">-</button>
+                                <input type="range" class="custom-range" name="digitLength" id="digitLength" value="4" min="2" max="6" oninput="setRangeValue(this.value, '#digitLength')">
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(1, '#digitLength')">+</button>
+                                <label for="#digitLength" id="slider-label3" class="slider-label">4</label>
                             </div>
                             <div class="col-12 col-md-4 col-lg-3 form-group margin-bottom-1 margin-top-1">
                                 <div class="custom-control custom-switch text-center">
@@ -171,8 +177,10 @@ layout: default
                                             style="fill:#007bff" />
                                     </svg>
                                 </label>
-                                <input type="range" class="custom-range" name="pinLength" id="pinLength" value="6" min="4" max="12" oninput="setRangeValue(this.value, 'slider-label4')">
-                                <label for="length" id="slider-label4" class="slider-label">6</label>
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(-1, '#pinLength')">-</button>
+                                <input type="range" class="custom-range" name="pinLength" id="pinLength" value="6" min="4" max="12" oninput="setRangeValue(this.value, '#pinLength')">
+                                <button class="btn btn-outline-primary slider-button" type="button" onclick="modRangeValue(1, '#pinLength')">+</button>
+                                <label for="#pinLength" id="slider-label4" class="slider-label">6</label>
                             </div>
                             <div class="col-12 margin-top-2">
                                 <div class="mj-result"></div>

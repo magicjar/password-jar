@@ -23,9 +23,16 @@ function openTab(e, tabName) {
     generatePassword();
 }
 
-function setRangeValue(val, id) {
-    document.getElementById(id).textContent = val;
+function modRangeValue(modValue, id) {
+    var range = document.querySelector(id);
+    range.value = parseInt(range.value) + parseInt(modValue);
 
+    setRangeValue(range.value, id);
+}
+
+function setRangeValue(val, id) {
+    document.querySelector('label[for="' + id + '"]').textContent = val;
+    
     generatePassword();
 }
 
