@@ -36,41 +36,46 @@ function setRangeValue(val, id) {
     generatePassword();
 }
 
-function generatePassword ()
-{
+function generatePassword () {
     var result, element, length, lowercase, uppercase, numbers, symbols, digitLength, letterFirst;
 
     element = document.getElementById(activeTabsID);
 
-    if (activeTabsID == "strongsave")
-    {
-        length = element.querySelector("#length").value;
-        lowercase = element.querySelector("#lowercase").checked;
-        uppercase = element.querySelector("#uppercase").checked;
-        numbers = element.querySelector("#numbers").checked;
-        symbols = element.querySelector("#symbols").checked;
-        result = PasswordJar.StrongSavePassword(length, lowercase, uppercase, numbers, symbols);
+    switch (activeTabsID) {
+        case "strongsave":
+            length = element.querySelector("#length").value;
+            lowercase = element.querySelector("#lowercase").checked;
+            uppercase = element.querySelector("#uppercase").checked;
+            numbers = element.querySelector("#numbers").checked;
+            symbols = element.querySelector("#symbols").checked;
+            result = PasswordJar.StrongSavePassword(length, lowercase, uppercase, numbers, symbols);
+            break;
+
+        case "easytoremember":
+            letterFirst = element.querySelector("#letterFirst").checked;
+            length = element.querySelector("#letterLength").value;
+            digitLength = element.querySelector("#digitLength").value;
+            result = PasswordJar.EasyToRememberPassword(letterFirst, length, digitLength);
+            break;
+
+        case "pin":
+            length = element.querySelector("#pinLength").value;
+            result = PasswordJar.PINPassword(length);
+            break;
+    
+        default:
+            result = '';
+            break;
     }
-    if (activeTabsID == "easytoremember")
-    {
-        letterFirst = element.querySelector("#letterFirst").checked;
-        length = element.querySelector("#letterLength").value;
-        digitLength = element.querySelector("#digitLength").value;
-        result = PasswordJar.EasyToRememberPassword(letterFirst, length, digitLength);
-    }
-    if (activeTabsID == "pin")
-    {
-        length = element.querySelector("#pinLength").value;
-        result = PasswordJar.PINPassword(length);
-    }
+
+    if (!result) result = 'Error generating password.'
 
     element.querySelector(".mj-result").textContent = result;
 
     console.log("Generated " + result);
 }
 
-function copyPassword ()
-{
+function copyPassword () {
     var elem = document.getElementById(activeTabsID);
     var text = elem.querySelector(".mj-result").textContent;
     var dummyText = document.createElement("textarea");
@@ -82,8 +87,7 @@ function copyPassword ()
     fade(elem.querySelector(".mj-result-copied"));
 }
 
-function fade (el)
-{
+function fade (el) {
     el.className += " fadeInOut";
     setTimeout(function () {
         el.className = "mj-result-copied";
