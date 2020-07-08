@@ -7,18 +7,22 @@ function Generate(length, lowercase = true, uppercase = true, numbers = true, sy
     let selectionCharSet = '';
 
     if (lowercase) selectionCharSet += lowercaseCharSet;
-
     if (uppercase) selectionCharSet += uppercaseCharSet;
-
     if (numbers) selectionCharSet += numbersCharSet;
-
     if (symbols) selectionCharSet += symbolsCharSet;
 
     let randomCharSet = '';
+    let lastRand = -1
 
-    for (let i = 0; i < length; i++) {
+    if (!selectionCharSet) return randomCharSet
+
+    while (randomCharSet.length < length) {
         let rand = Math.floor(Math.random() * selectionCharSet.length);
-        randomCharSet += selectionCharSet.substring(rand, rand + 1);
+        
+        if (rand != lastRand) {
+            randomCharSet += selectionCharSet.substring(rand, rand + 1);
+            lastRand = rand
+        }
     }
 
     return randomCharSet;
