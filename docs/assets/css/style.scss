@@ -9,10 +9,21 @@
  * Bootstrap (Grid, Buttons, Button Group, Custom Forms)
  * Monokai (Syntax Highlighter)
  *
- */
+**/
+$font-family-base: 'Roboto', sans-serif !default;
+
+$custom-control-indicator-size: 2rem !default;
+
+$btn-border-radius:     0 !default;
+$btn-border-radius-lg:  0 !default;
+$btn-border-radius-sm:  0 !default;
+
+$border-width: 0 !default;
+
+$body-color: #626e71 !default;
 
 @import "bootstrap/functions";
-@import "variables";
+@import "bootstrap/variables";
 @import "bootstrap/mixins";
 
 $sunset-orange: #FF605C;
@@ -27,13 +38,10 @@ $theme-colors: (
 );
 
 @import "bootstrap/reboot";
-//@import "bootstrap/root";
 @import "bootstrap/grid";
-//@import "bootstrap/forms";
 @import "bootstrap/buttons";
-//@import "bootstrap/input-group";
 @import "bootstrap/button-group";
 @import "bootstrap/custom-forms";
 @import "monokai";
-//@import "social-logos";
+// @import "social-logos";
 @import "main";
