@@ -37,12 +37,8 @@ body, html {
 
     #tabs-content {
         backdrop-filter: blur(30px);
-        background: inherit;
-
-        .tabs {
-            padding: 2rem;
-            background: rgba(white, .66);
-        }
+        background: rgba(white, .66);
+        padding: 2rem;
         
         .custom-range {
             margin: auto;
@@ -69,23 +65,22 @@ body, html {
 
         .slider-label,
         .slider-icon,
-        .slider-button {
+        .slider-button,
+        .mj-result,
+        .mj-result-copied {
             text-align: center;
+            font-weight: bold;
             border-radius: .5rem;
             margin-bottom: 0rem;
+            background: rgba(#fff, .33);
         }
 
         .slider-label {
-            background: rgba(#e9ecef, .66);
             padding: .25rem .75rem;
             font-size: 1.25rem;
-            font-weight: bold;
         }
 
         .slider-button {
-            width: 38px !important;
-            background: rgba(233,236,239,0.66);
-            font-weight: bold;
             margin: 0 1rem;
         }
 
@@ -93,10 +88,7 @@ body, html {
         .mj-result-copied {
             font-family: "Courier New", monospace;
             font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
             letter-spacing: .25rem;
-            background: rgba($color: #e9ecef, $alpha: .66);
             border-radius: 1rem;
             line-height: 2.5rem;
             overflow-wrap: break-word;
@@ -110,14 +102,11 @@ body, html {
             width: calc(100% - 30px);
             height: 100%;
             color: white;
-            background: rgba($color: #00CA4E, $alpha: 1);
+            background: rgba($malachite, .66);
             display: none;
-            justify-content: center;
-            align-items: center;
 
             &.fadeInOut {
-                display: flex;
-                display: -ms-flexbox;
+                display: block;
                 animation: fadeInOut 2s ease-in-out forwards;
                 opacity: 0;
             }
@@ -126,7 +115,7 @@ body, html {
         svg {
             width: 38px;
             height: 38px;
-            border-radius: .75rem;
+            border-radius: .5rem;
         }
     }
 }
@@ -191,11 +180,8 @@ body, html {
     55% { opacity: 1; }
 }
 
-@media (min-width: 768px)
-{
+@media (min-width: 768px) {
     #tabs-content {
-        >div {
-            min-height: 436px;
-        }
+        min-height: 436px;
     }
 }

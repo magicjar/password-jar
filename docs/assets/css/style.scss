@@ -1,14 +1,12 @@
 ---
 
 ---
-
 /*!
- * Copyright 2020 Fajar Setya Budi.
+ * Copyright 2020 - Fajar Setya Budi.
  * 
  * Used 3rd-party Plugin :
- * Bootstrap (Grid, Buttons, Button Group, Custom Forms)
+ * Bootstrap (Reboot, Grid, Buttons, Button Group, Custom Forms)
  * Monokai (Syntax Highlighter)
- *
 **/
 $font-family-base: 'Roboto', sans-serif !default;
 
@@ -22,13 +20,13 @@ $border-width: 0 !default;
 
 $body-color: #626e71 !default;
 
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-
 $sunset-orange: #FF605C;
 $pastel-orange: #FFBD44;
 $malachite:     #00CA4E;
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 
 $theme-colors: (
     "primary":          $primary,

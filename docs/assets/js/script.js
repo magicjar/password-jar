@@ -1,9 +1,9 @@
 "use-strict";
 
-var activeTabsID, classes, tabLinks;
+var activeTabsID, tabContents, tabLinks;
 
 document.body.onload = function () {
-    classes = document.getElementsByClassName("tabs");
+    tabContents = document.getElementsByClassName("tabs-content");
     tabLinks = document.getElementsByClassName("tablink");
 
     document.getElementsByClassName("tablink")[0].click();
@@ -12,8 +12,8 @@ document.body.onload = function () {
 function openTab(e, tabName) {
     if (activeTabsID == tabName) return;
 
-    for (var i = 0; i < classes.length; i++) {
-        classes[i].style.display = "none";
+    for (var i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = "none";
         tabLinks[i].className = tabLinks[i].className.replace(" btn-success", "");
     }
 
